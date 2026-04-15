@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtitle Studio v4.0 | Aniket Mukherjee</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🟢</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --border: #222222;
+            --accent: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.05);
+            --text-main: #ffffff;
+            --text-dim: #888888;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: var(--bg);
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding-top: 6rem;
+        }
+        
+        .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .text-accent { color: var(--accent); }
+        .text-dim { color: var(--text-dim); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+        section:last-of-type { border-bottom: none; }
+
+        nav { 
+            position: fixed;
+            top: 0; left: 0; right: 0; width: 100%; z-index: 9999; 
+            background: rgba(10, 10, 10, 0.8); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-content { 
+            max-width: 1000px;
+            margin: 0 auto; padding: 1.5rem 2rem; 
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a.nav-back { color: var(--accent); }
+
+        .hero { padding: 3rem 0 4rem; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin: 1rem 0; letter-spacing: -0.03em; }
+        .hero p { font-size: 1.1rem; color: var(--text-dim); max-width: 800px; margin-bottom: 2rem; }
+        
+        .badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .badge { background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; }
+
+        h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; margin-bottom: 2rem; letter-spacing: -0.02em; }
+        h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-main); }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        
+        .feature-block { padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
+        .feature-block ul { list-style-type: none; margin-top: 1rem; }
+        .feature-block li { color: var(--text-dim); margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem; }
+        .feature-block li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+        .image-placeholder {
+            width: 100%; height: 400px; background: #050505; border: 1px solid #333;
+            border-radius: 4px; margin-bottom: 3rem; display: flex; align-items: center;
+            justify-content: center; color: var(--text-dim);
+            /* You can add background-image: url('screenshot-name.png'); inline later */
+        }
+
+        /* Data Tables Styling for Documentation */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.9rem; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { font-weight: 500; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; background: var(--surface); }
+        td { color: var(--text-dim); }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        td strong { color: var(--text-main); font-weight: 500; }
+        
+        code { background: var(--surface); border: 1px solid var(--border); padding: 0.2rem 0.4rem; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: var(--accent); }
+
+        footer { padding: 4rem 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+            .image-placeholder { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="nav-links mono">
+                <a href="../" class="nav-back">← Back to Main Portfolio</a>
+            </div>
+            <div class="mono text-dim">sys.id_01</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="mono section-label text-accent">Documentation // Architecture</span>
+            <h1>Subtitle Studio v4.0</h1>
+            
+            <div class="badges mono">
+                <span class="badge">Python 3.12</span>
+                <span class="badge">OpenAI Whisper</span>
+                <span class="badge">FFmpeg / OpenCV</span>
+                <span class="badge">PyInstaller</span>
+                <span class="badge">CustomTkinter</span>
+            </div>
+            
+            <p>A professional desktop subtitle editor with AI-powered transcription, built entirely in Python. A complete subtitle production pipeline in a single desktop application—load a video, generate subtitles with AI, edit them with frame-level precision, and export. Zero external tools needed.</p>
+        </section>
+
+        <section id="ui">
+            <div class="image-placeholder mono">
+                [ Screenshot: Main Edit Tab UI goes here ]
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Core Infrastructure</h2>
+            
+            <div class="grid-2">
+                <div class="feature-block">
+                    <h3>AI Subtitle Generation</h3>
+                    <p class="text-dim">OpenAI Whisper integration to generate subtitles from any video. Runs entirely locally.</p>
+                    <ul>
+                        <li>Select model size (tiny → large)</li>
+                        <li>Word-level timestamps for tight alignment</li>
+                        <li>Auto-splits long sentences into readable cues</li>
+                        <li>Conditioned on previous text for context</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-block">
+                    <h3>NLE-Grade Video Preview</h3>
+                    <p class="text-dim">Synchronized playback combining OpenCV visuals and Pygame audio.</p>
+                    <ul>
+                        <li>Premiere-style waveform for audio peaks</li>
+                        <li>Triangular playhead with visual drag scrubbing</li>
+                        <li>Frame-level stepping (1/10 frame increments)</li>
+                        <li>Adjustable preview resolution caps</li>
+                    </ul>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Invisible Quality Control</h3>
+                    <p class="text-dim">An invisible automation engine (core/auto.py) that acts as a silent guardrail.</p>
+                    <ul>
+                        <li>Auto-fix on load: Reindexes and strips whitespace</li>
+                        <li>Auto-fixes overlaps and adjacent cue bleed</li>
+                        <li>Auto-splits cues >84 characters or 2 lines</li>
+                        <li>Pre-export cleanup for negative durations</li>
+                    </ul>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Professional Export Engine</h3>
+                    <p class="text-dim">FFmpeg-driven rendering pipeline handling media, sidecar, and text outputs.</p>
+                    <ul>
+                        <li>4 Modes: Full, Split, Merge, Delete sections</li>
+                        <li>Burned subtitles with custom styling</li>
+                        <li>Lossless Option: CRF 0 + Ultrafast + FLAC</li>
+                        <li>Subtitle-only: SRT, VTT, TXT, DOCX</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="qc-engine">
+            <h2>Quality Control Thresholds</h2>
+            <p class="text-dim" style="margin-bottom: 2rem;">The integrated QC engine runs invisibly alongside the Whisper generation and export pipelines. It assesses Cues against strict broadcast constraints.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Check Type</th>
+                        <th>Threshold</th>
+                        <th>Resolution Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Overlap</strong></td>
+                        <td>Any negative gap</td>
+                        <td>Auto-fix (Trims previous cue)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Empty Cue</strong></td>
+                        <td>No text present</td>
+                        <td>Auto-fix (Removes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Negative Duration</strong></td>
+                        <td>End < Start</td>
+                        <td>Auto-fix (Corrects)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Line Too Long</strong></td>
+                        <td>> 42 characters</td>
+                        <td>Auto-split</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High CPS</strong></td>
+                        <td>> 25 chars/sec</td>
+                        <td>Manual Review Flag</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Too Many Lines</strong></td>
+                        <td>> 2 lines</td>
+                        <td>Manual Review Flag</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Small Gap</strong></td>
+                        <td>< 0.04s (1 frame)</td>
+                        <td>Manual Review Flag</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="ai-models">
+            <h2>Whisper Transcription Models</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model Name</th>
+                        <th>VRAM / RAM Size</th>
+                        <th>Speed (CPU)</th>
+                        <th>Accuracy Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tiny</strong></td>
+                        <td>~75 MB</td>
+                        <td>~1 min/min</td>
+                        <td>Fair</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Base</strong> <em>(Recommended)</em></td>
+                        <td>~150 MB</td>
+                        <td>~3 min/min</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Small</strong></td>
+                        <td>~500 MB</td>
+                        <td>~8 min/min</td>
+                        <td>Very Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>~1.5 GB</td>
+                        <td>~15 min/min</td>
+                        <td>Excellent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="shortcuts">
+            <h2>NLE Navigation & Shortcuts</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Transport</h3>
+                    <table>
+                        <tbody>
+                            <tr><td>Play / Pause</td><td><code>Space</code></td></tr>
+                            <tr><td>Play forward</td><td><code>L</code></td></tr>
+                            <tr><td>Pause</td><td><code>K</code></td></tr>
+                            <tr><td>Rewind 5s</td><td><code>J</code></td></tr>
+                            <tr><td>Step back 1 frame</td><td><code>← Arrow</code></td></tr>
+                            <tr><td>Step forward 1 frame</td><td><code>→ Arrow</code></td></tr>
+                            <tr><td>Step ±10 frames</td><td><code>Shift + ←/→</code></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Editing & Marking</h3>
+                    <table>
+                        <tbody>
+                            <tr><td>Mark IN / OUT</td><td><code>I</code> / <code>O</code></td></tr>
+                            <tr><td>Add Section</td><td><code>P</code></td></tr>
+                            <tr><td>Set cue START</td><td><code>[</code></td></tr>
+                            <tr><td>Set cue END</td><td><code>]</code></td></tr>
+                            <tr><td>Play from clicked cue</td><td><code>Ctrl + Click</code></td></tr>
+                            <tr><td>Save text edit inline</td><td><code>Ctrl + Enter</code></td></tr>
+                            <tr><td>Spelling suggestions</td><td><code>Right-Click</code></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="reveal">
+            <div class="mono text-dim">build.target: <span class="text-accent">Win 10/11 x64 Standalone</span></div>
+            <div class="mono text-dim">© 2026 Aniket Mukherjee</div>
+        </footer>
+    </main>
+
+</body>
+</html>
