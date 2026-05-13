@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniket Mukherjee | Product Builder & Systems Architect</title>
+    <title>Aniket Mukherjee | System Architect & Creative Technologist</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🟢</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,16 +77,6 @@
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 600; line-height: 1.1; margin: 1.5rem 0; letter-spacing: -0.03em; }
         .hero p { font-size: 1.2rem; color: var(--text-dim); max-width: 800px; margin-bottom: 1.5rem; }
         
-        .proof-line { 
-            display: inline-block;
-            background: var(--accent-dim);
-            border-left: 2px solid var(--accent); 
-            padding: 0.75rem 1.25rem; 
-            margin-bottom: 3rem; 
-            font-size: 0.95rem; 
-            color: var(--text-main);
-        }
-
         .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
         .btn { display: inline-block; padding: 1rem 2rem; background: var(--text-main); color: var(--bg); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.2s; border: 1px solid var(--text-main); cursor: pointer; text-align: center; }
         .btn:hover { background: var(--accent); border-color: var(--accent); }
@@ -97,39 +87,24 @@
         .section-label { color: var(--accent); margin-bottom: 1rem; display: block; }
 
         .card { padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
-        .card-featured { border: 1px solid var(--accent); background: var(--accent-dim); margin-bottom: 2rem; }
         .card h3 { font-size: 1.25rem; margin-bottom: 1rem; font-weight: 500; }
-        .card ul { list-style: none; margin-top: 1rem; }
-        .card li { color: var(--text-dim); margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem; font-size: 0.95rem; }
-        .card li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-
-        .flagship-study { border: 1px solid var(--accent); background: var(--surface); padding: 3rem; position: relative; overflow: hidden; }
-        .flagship-study::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent); }
-        .study-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-top: 1rem; }
-        .study-metrics { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-        .metric { display: flex; flex-direction: column; }
-        .metric strong { font-size: 1.25rem; color: var(--accent); }
-        .metric span { font-size: 0.85rem; color: var(--text-dim); }
-
-        .secondary-study { margin-top: 4rem; padding-top: 4rem; border-top: 1px dashed var(--border); }
-
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-
-        .contact-cta { text-align: center; padding: 4rem 2rem; background: var(--surface); border: 1px solid var(--border); margin: 2rem 0; }
         
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        
+        .timeline-item { position: relative; padding-left: 2.5rem; margin-bottom: 3rem; }
+        .timeline-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: -3rem; width: 1px; background: var(--border); }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-item::after { content: ""; position: absolute; left: -4px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+        
+        .contact-cta { text-align: center; padding: 4rem 2rem; background: var(--surface); border: 1px solid var(--border); margin: 2rem 0; }
         footer { padding: 4rem 0; display: flex; justify-content: center; align-items: center; border-top: 1px solid var(--border); }
 
         @media (max-width: 768px) {
             body { padding-top: 8rem; } 
             .nav-content { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.5rem; }
             .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
-            .nav-links a { margin-left: 0; margin-right: 0; font-size: 0.75rem; }
-            .btn-group { flex-direction: column; width: 100%; align-items: stretch; }
-            .btn { width: 100%; }
-            .grid-2, .grid-3, .study-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .flagship-study { padding: 2rem; }
-            .study-metrics { flex-direction: column; gap: 1rem; }
+            .nav-links a { margin-left: 0; font-size: 0.75rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
@@ -139,10 +114,9 @@
         <div class="nav-content">
             <div class="mono text-main brand-name">Aniket Mukherjee</div>
             <div class="nav-links mono">
-                <a href="#what-i-build">Execution</a>
-                <a href="#flagship">Case Studies</a>
-                <a href="#approach">Methodology</a>
-                <a href="#about">About</a>
+                <a href="#manifesto">Methodology</a>
+                <a href="#architecture">The System</a>
+                <a href="#contact">Contact</a>
                 <a href="Final CV 2026_CT.pdf" target="_blank" class="nav-resume">Resume ↘</a>
             </div>
         </div>
@@ -150,303 +124,85 @@
 
     <main class="container">
         <section class="hero">
-            <span class="mono section-label">Product Builder — AI Systems & Workflow Automation</span>
-            <h1>I Turn Fragile, Manual Pipelines into <span class="text-accent">Reliable Production Systems.</span></h1>
+            <span class="mono section-label">System Architect // Creative Technologist</span>
+            <h1>17 Years of Motion Design.<br><span class="text-accent">One Vision for System Architecture.</span></h1>
             
-            <p>I turn messy, manual enterprise workflows into working software systems—designed, built, and deployed under real-world constraints.</p>
+            <p>I spent nearly two decades mastering the art of the frame. Now, I leverage that expertise to architect scalable creative systems, using Generative AI to accelerate execution.</p>
             
-            <div class="proof-line mono" style="margin-bottom: 1rem;">
-                Proof of Execution: Designed and shipped 3 production-grade workflow systems—fully offline, zero-dependency, and built for enterprise constraints.
-            </div>
-            <div class="mono text-dim" style="font-size: 0.85rem; margin-bottom: 3rem; letter-spacing: 0.05em;">
-                Built without external cloud APIs. Designed for air-gapped enterprise environments.
-            </div>
-            
-            <div class="btn-group mono">
-                <a href="#flagship" class="btn">View Case Studies</a>
-                <a href="Final CV 2026_CT.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <div class="btn-group mono" style="margin-top: 2rem;">
+                <a href="#architecture" class="btn">View Subtitle Studio v5</a>
+                <a href="#manifesto" class="btn btn-outline">Read Methodology</a>
             </div>
         </section>
 
-        <section id="cost-of-inaction" class="reveal">
-            <span class="mono section-label">// The Enterprise Reality</span>
-            <h2>What Happens When Workflows Break</h2>
-            <div class="card card-featured">
-                <p class="text-dim" style="margin-bottom: 1.5rem; font-size: 1.05rem;">
-                    Leaving legacy pipelines unchecked isn't just an inconvenience—it's a compounding operational risk. When teams lack deterministic, automated systems:
-                </p>
-                <div class="grid-2" style="gap: 1rem;">
-                    <ul style="margin-top: 0;">
-                        <li><strong>Silent Errors Scale:</strong> Subtitle sync drift, formatting breaks, and missed compliance checks pass through manual QC unnoticed.</li>
-                        <li><strong>Shadow IT Proliferates:</strong> Teams rely on random online converters, breaking security and audit trails.</li>
-                    </ul>
-                    <ul style="margin-top: 0;">
-                        <li><strong>Vendor Lock-in Deepens:</strong> Scaling production means buying more expensive NLE seats instead of executing headless processing.</li>
-                        <li><strong>Tribal Knowledge Fails:</strong> Processes exist only in the minds of a few senior operators, making onboarding slow and turnover catastrophic.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="what-i-build" class="reveal">
-            <span class="mono section-label">// The Output</span>
-            <h2>What I Build</h2>
-            <p class="text-dim" style="max-width: 700px; margin-bottom: 2rem;"> I focus on eliminating high-friction workflows by turning them into reliable, repeatable software systems. My work sits at the intersection of product thinking, automation, and real-world operational constraints.</p>
-
-            <div class="grid-3">
-                <div class="card">
-                    <h3>AI-Powered Pipelines</h3>
-                    <ul>
-                        <li>LLM & Python system orchestration</li>
-                        <li>Scalable media content generation</li>
-                        <li>Air-gapped, zero-dependency tools</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Localization & Media Systems</h3>
-                    <ul>
-                        <li>Automated subtitle generation</li>
-                        <li>Frame-accurate timeline validation</li>
-                        <li>Lossless, compliance-ready export</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Process Design & Optimization</h3>
-                    <ul>
-                        <li>Turn operational chaos into structured logic</li>
-                        <li>Define edge cases & brand constraints</li>
-                        <li>Standardize enterprise operations</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="flagship" class="reveal">
-            <span class="mono section-label">// Featured Execution</span>
-            <h2 style="margin-bottom: 0.5rem;">Flagship: Subtitle Studio v4.0</h2>
-            <div class="mono text-accent" style="margin-bottom: 2rem; font-size: 0.85rem; letter-spacing: 0.1em;">
-                [STATUS] Production-ready system, recently deployed for real-world validation.
-            </div>
-
-            <div class="flagship-study">
-                <div class="study-grid">
-                    <div>
-                        <h4 class="mono text-dim" style="margin-bottom: 0.5rem;">The Problem</h4>
-                        <p style="margin-bottom: 1rem;">Enterprise subtitling and media compression lacked a unified tool. Teams relied heavily on expensive NLEs (Premiere/Resolve) and manual processes, creating massive scaling bottlenecks and vendor dependence.</p>
-                        
-                        <h4 class="mono text-dim" style="margin-bottom: 0.5rem;">The Solution</h4>
-                        <p>Designed a fully offline, zero-dependency AI pipeline integrating Whisper with a custom validation engine and native compression tools. It handles frame-accurate subtitle validation and sync drift detection automatically before export, allowing non-technical users to generate and QC media without NLEs.</p>
-                        
-                        <p class="text-dim" style="margin-top: 1rem; font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 1rem;">
-                            <strong>Real-World Stress Test:</strong> Tested across 20+ real production media files with varying audio quality, heavy accents, and inconsistent source formats.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="card" style="background: var(--bg); padding: 1.5rem;">
-                            <h4 class="mono text-dim" style="margin-bottom: 1rem;">System Architecture</h4>
-                            <div class="mono" style="font-size: 0.85rem; color: var(--text-dim); line-height: 2;">
-                                [INPUT] Raw Video Media<br>
-                                &nbsp;&nbsp;↓<br>
-                                [AI ORCHESTRATION] Whisper Sub-Engine<br>
-                                &nbsp;&nbsp;↓<br>
-                                [VALIDATION] Auto-QC Engine (OpenCV)<br>
-                                &nbsp;&nbsp;↓<br>
-                                [OUTPUT] Lossless Encoded Master
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="study-metrics mono">
-                    <div class="metric">
-                        <strong>Iterated Execution</strong>
-                        <span>Evolved across 4 major versions</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Turnaround Accelerated</strong>
-                        <span>Reduced from ~4-6 hrs to <45 mins (early tests)</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Zero NLE</strong>
-                        <span>Removed Premiere/Resolve from 100% of tested workflows</span>
-                    </div>
-                </div>
-
-                <div style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
-                    <div>
-                        <h4 class="mono text-dim" style="margin-bottom: 0.5rem;">Key Design Decision</h4>
-                        <p class="text-dim">I prioritized <strong>deterministic validation</strong> over raw AI output quality. By building a verification layer that flags hallucination or sync drift, I ensured the tool remained trustworthy for enterprise-grade production.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem;">
-                    <a href="#contact" class="btn btn-outline mono">Request Architecture Walkthrough →</a>
-                    <span class="text-dim mono" style="font-size: 0.75rem;">*Source code restricted due to enterprise IP.</span>
-                </div>
-            </div>
-
-            <div class="secondary-study">
-                <span class="mono section-label">// Secondary Execution</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">DocuFlow | Document Transformation System</h3>
-                <div class="mono text-accent" style="margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">
-                    [STATUS] Internal pilot replacing unsanctioned tools in restricted environments.
-                </div>
-                
-                <div class="study-grid">
-                    <div>
-                        <p class="text-dim" style="margin-bottom: 1.5rem;">
-                            Enterprise documentation workflows often force teams to rely on unapproved "shadow IT" or online converters, creating massive security and compliance vulnerabilities.
-                        </p>
-                        <p class="text-dim" style="margin-bottom: 1.5rem;">
-                            I built DocuFlow to bring a sanctioned, zero-dependency tool into an environment where none existed. It transforms unstructured input into consistent, production-ready outputs using a fully self-contained conversion stack (Python 3.12, Pandoc, XeLaTeX).
-                        </p>
-                        <p class="text-dim" style="margin-bottom: 2rem; font-size: 0.9rem; border-left: 2px solid var(--border); padding-left: 1rem;">
-                            <strong>The Impact:</strong> Eliminated reliance on shadow software and third-party vendors, providing an airtight, secured environment for document transformation.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="card" style="background: var(--bg); padding: 1.5rem;">
-                            <h4 class="mono text-dim" style="margin-bottom: 1rem;">System Architecture</h4>
-                            <div class="mono" style="font-size: 0.85rem; color: var(--text-dim); line-height: 2;">
-                                [INPUT] Raw Docs (DOCX/MD/TXT)<br>
-                                &nbsp;&nbsp;↓<br>
-                                [TRANSFORMATION] Bundled Pandoc<br>
-                                &nbsp;&nbsp;↓<br>
-                                [FORMATTING] Bundled XeLaTeX Layer<br>
-                                &nbsp;&nbsp;↓<br>
-                                [OUTPUT] Secure PDF / DOCX
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="study-metrics mono" style="margin-top: 0; padding-top: 0; border-top: none;">
-                    <div class="metric">
-                        <strong>Shadow IT Removed</strong>
-                        <span>Replaced unsanctioned online tools</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Zero-Install</strong>
-                        <span>Fully bundled, portable runtime</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Air-Gapped</strong>
-                        <span>Airtight secured environment</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="secondary-study" style="margin-top: 4rem; padding-top: 4rem;">
-                <span class="mono section-label">// Secondary Execution</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AVTOOLS | Modular Media Automation System</h3>
-                <div class="mono text-accent" style="margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">
-                    [STATUS] Functional system validated on real media preprocessing workflows.
-                </div>
-                
-                <div class="study-grid">
-                    <div>
-                        <p class="text-dim" style="margin-bottom: 1.5rem;">
-                            Editors repeatedly perform the same audio cleanup and folder structuring tasks manually across projects, leading to inconsistent setups and wasted time before actual editing even begins.
-                        </p>
-                        <p class="text-dim" style="margin-bottom: 1.5rem;">
-                            I built AVTOOLS as a standalone desktop utility integrating AI audio cleanup (DeepFilterNet3) and automated folder logic to standardize project setups.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="card" style="background: var(--bg); padding: 1.5rem;">
-                            <h4 class="mono text-dim" style="margin-bottom: 1rem;">System Pipeline</h4>
-                            <div class="mono" style="font-size: 0.85rem; color: var(--text-dim); line-height: 2;">
-                                [INPUT] Raw Media<br>
-                                &nbsp;&nbsp;↓<br>
-                                [AI AUDIO] DeepFilterNet3 Cleanup<br>
-                                &nbsp;&nbsp;↓<br>
-                                [STRUCTURE] Auto-Folder Logic<br>
-                                &nbsp;&nbsp;↓<br>
-                                [OUTPUT] Editor-Ready Project
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="study-metrics mono" style="margin-top: 2rem; padding-top: 0; border-top: none;">
-                    <div class="metric">
-                        <strong>Standardized</strong>
-                        <span>Eliminates repetitive project setups</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Automated</strong>
-                        <span>Consistent audio cleanup pipeline</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Functional</strong>
-                        <span>Tested on live project workflows</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="approach" class="reveal">
-            <span class="mono section-label">// Operating Principles</span>
-            <h2>My Approach to Systems Design</h2>
+        <section id="manifesto" class="reveal">
+            <span class="mono section-label">// The Scaled Creative</span>
+            <h2>Motion as Logic</h2>
             <div class="grid-2">
-                <div class="card">
-                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">01. Systems > Screens</h3>
-                    <p class="text-dim" style="font-size: 0.95rem; margin-top: 1rem;">I don't just design interfaces; I design the underlying logic and data flow that makes the interface necessary in the first place.</p>
+                <div>
+                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;">The Architect's Empathy</h3>
+                    <p class="text-dim" style="font-size: 0.95rem;">After 17 years in high-pressure production environments, I know that manual workflows are the enemy of creativity. I build offline, zero-dependency tools designed to liberate senior editors from repetitive bottlenecks like format conversions and branded subtitle exports.</p>
                 </div>
-                <div class="card">
-                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">02. Automation > Manual Effort</h3>
-                    <p class="text-dim" style="font-size: 0.95rem; margin-top: 1rem;">If a human is doing the exact same task more than three times, it should be mapped, codified, and automated.</p>
+                <div>
+                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;">Translation to Software</h3>
+                    <p class="text-dim" style="font-size: 0.95rem;">Designing a motion sequence and designing a software architecture are the same discipline: both require deep mastery of timing, layering, dependency chains, and precise orchestration. I translate visual thinking into robust data flows.</p>
                 </div>
-                <div class="card">
-                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">03. Validation > Blind AI Output</h3>
-                    <p class="text-dim" style="font-size: 0.95rem; margin-top: 1rem;">AI accelerates generation, but invisible guardrails and programmatic validation ensure the output is actually usable by an enterprise.</p>
-                </div>
-                <div class="card">
-                    <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">04. Structure > Chaos</h3>
-                    <p class="text-dim" style="font-size: 0.95rem; margin-top: 1rem;">Translating ambiguous creative workflows into rigid, predictable programmatic logic is the core of scaling production.</p>
+                <div style="grid-column: 1 / -1;">
+                    <div class="card" style="border-color: var(--accent); background: var(--accent-dim);">
+                        <h3 class="mono text-main" style="font-size: 1rem; margin-bottom: 1rem;">AI as the Technical Crew</h3>
+                        <p class="text-dim" style="font-size: 0.95rem;">I operate as the Lead Architect and Final Approver. While Generative AI accelerates the writing of code, my role is to define the logic, stress-test the edge cases, and ensure every output meets the frame-accurate standards of a 17-year veteran.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="reveal">
-            <span class="mono section-label">// Background</span>
-            <h2>About Me</h2>
-            <div style="max-width: 800px;">
+        <section id="architecture" class="reveal">
+            <span class="mono section-label">// Case Study</span>
+            <h2 style="margin-bottom: 0.5rem;">Subtitle Studio v1 to v5</h2>
+            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">The evolution of a single production tool demonstrates how a workflow is systematically stripped of friction, secured against risk, and scaled across an enterprise.</p>
 
-                <blockquote style="font-style: italic; color: var(--text-main); font-size: 1.25rem; margin-bottom: 2rem; border-left: 2px solid var(--accent); padding-left: 1.5rem; line-height: 1.5;">
-                    "I operate as a product builder. I start with broken workflows, not features, and prioritize shipping over 'perfect' architecture."
-                </blockquote>
-                
-                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-main);">
-                    I’m a systems-focused builder with a background in enterprise broadcast and post-production, now focused on designing and shipping AI-driven workflow tools.
-                </p>
-                <p class="text-dim" style="margin-bottom: 1.5rem;">
-                    My edge comes from working inside high-pressure production environments where inefficiency has a real financial and operational cost. I specialize in identifying fragile, manual workflows and replacing them with structured, reliable systems that teams can actually use.
-                </p>
-                
-                <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
-                    <h4 class="mono text-main" style="margin-bottom: 1rem;">Recognition</h4>
-                    <ul class="text-dim" style="list-style: none;">
-                        <li style="margin-bottom: 0.5rem;">🏆 Quality Perfectionist 2022 (PwC)</li>
-                        <li style="margin-bottom: 0.5rem;">🏆 "There is no Box" Innovation Award 2020 (PwC)</li>
-                        <li>🏆 In-House Agency of the Year 2021 (IHAF) — As part of UK Video & Animation</li>
-                    </ul>
-                </div>
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v1] The Democratization Milestone</h3>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Over-reliance on senior editors for the tedious task of burning branded subtitles into client videos.<br>
+                <strong>The Execution:</strong> Built a utility to democratize this process, enabling anyone on the team with a standard laptop to export client-ready, branded deliverables without specialized editing software.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v2] The Verification Layer</h3>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Automated burns lacked the nuance required for high-stakes client communication.<br>
+                <strong>The Execution:</strong> Integrated a "Human-in-the-Loop" editing interface. This ensured that while generation was automated, final timing and text remained under strict professional editorial control.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v3] Securing the Pipeline</h3>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Teams were relying on unvetted online converters (Shadow IT) for media compression and formatting.<br>
+                <strong>The Execution:</strong> Designed a fully offline export chain (SRT, VTT, MP4 compression) to eliminate the security risk of processing company IP through third-party web tools.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v4] Local AI Exploration</h3>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Investigating if local Generative AI could accelerate the data-entry phase of production.<br>
+                <strong>The Execution:</strong> Hardened the local architecture to support Whisper, stress-testing how local inference performs within standard enterprise hardware limits.</p>
+            </div>
+
+            <div class="timeline-item" style="border-left-color: var(--accent);">
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[CURRENT STATE] Ship Candidate</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">[v5] The Strategic Pivot</h3>
+                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Transcription is increasingly commoditized, but high-fidelity audio restoration remains a major manual bottleneck.</p>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Replaced the transcription engine with a Premium Audio Enhancement pipeline (pyrnnoise). Solved severe PyAV and Nuitka packaging conflicts to deliver v5 as a hardened, zero-dependency standalone EXE. It requires no environment setup—proving the system is ready for secure, enterprise-wide deployment on any clean machine.</p>
             </div>
         </section>
 
-        <section id="contact" class="reveal" style="border-bottom: none;">
+        <section id="contact" class="reveal">
             <div class="contact-cta">
-                <span class="mono section-label">Evaluate Your Pipeline</span>
-                <h3>Let’s Build Something Efficient.</h3>
+                <span class="mono section-label">Let's Build</span>
+                <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Engineering the Systems that Scale Creativity.</h3>
                 <p class="text-dim" style="max-width: 600px; margin: 0 auto 3rem;">
-                    Looking for a builder to scale your internal pipelines? If you need someone to identify, design, and ship automated solutions for enterprise bottlenecks, let's talk.
+                    After 17 years in motion design, my focus has evolved from crafting individual frames to architecting workflows that protect creative talent and secure enterprise IP. If you need to remove the friction from your production pipeline, let's talk.
                 </p>
                 <div class="btn-group" style="justify-content: center;">
                     <a href="mailto:aniket.mu86@gmail.com" class="btn mono">Email Me</a>
                     <a href="https://linkedin.com/in/aniket86" target="_blank" class="btn btn-outline mono">LinkedIn</a>
-                    <a href="Final CV 2026_CT.pdf" target="_blank" class="btn btn-outline mono">Download Resume</a>
                 </div>
             </div>
         </section>
