@@ -95,20 +95,6 @@
         .timeline-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: -3rem; width: 1px; background: var(--border); }
         .timeline-item:last-child::before { display: none; }
         .timeline-item::after { content: ""; position: absolute; left: -4px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
-        
-        /* Architecture Visual Placeholder */
-        .diagram-box {
-            width: 100%;
-            height: 250px;
-            background: repeating-linear-gradient(45deg, var(--surface), var(--surface) 10px, var(--bg) 10px, var(--bg) 20px);
-            border: 1px dashed var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 2.5rem 0;
-            color: var(--text-dim);
-            border-radius: 4px;
-        }
 
         .contact-cta { text-align: center; padding: 4rem 2rem; background: var(--surface); border: 1px solid var(--border); margin: 2rem 0; }
         footer { padding: 4rem 0; display: flex; justify-content: center; align-items: center; border-top: 1px solid var(--border); }
@@ -176,8 +162,20 @@
             <h2 style="margin-bottom: 0.5rem;">Subtitle Studio v1 to v5</h2>
             <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">Subtitle Studio evolved from a simple subtitle utility into a hardened production system designed to remove workflow friction, reduce operational risk, and scale creative output.</p>
 
-            <div class="diagram-box mono">
-                [ Insert System Diagram: Orchestration Logic & Offline Pipeline Topology ]
+            <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 2.5rem 0;">
+                <div style="color: var(--accent); margin-bottom: 1.5rem;">// SYSTEM_TOPOLOGY.config</div>
+                <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
+[RAW MEDIA] ──&gt; (Local Ingestion)
+              │
+              ▼
+         [PROCESSING ENGINE]
+         ├─&gt; AI Audio Cleanup (pyrnnoise)
+         ├─&gt; Automated Format Conversion (SRT/VTT)
+         └─&gt; Frame-Accurate Sync Validation
+              │
+              ▼
+[ENCODING] ──&gt; (Offline Compression) ──&gt; [FINAL RENDER]
+                </div>
             </div>
 
             <div class="timeline-item">
@@ -218,8 +216,17 @@
                 <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Orchestrated a dynamic render pipeline using AI-generated JavaScript (ExtendScript). The architecture programmatically parses raw SRT data and automatically injects it into pre-rigged After Effects templates, generating fully localized, render-ready project files with zero manual data entry.</p>
             </div>
             
-            <div class="diagram-box mono" style="margin-top: 3rem;">
-                [ Insert Deployment Visual: Nuitka Standalone Zero-Dependency Architecture ]
+            <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 3rem 0;">
+                <div style="color: var(--accent); margin-bottom: 1.5rem;">// STANDALONE_ARCHITECTURE.sys</div>
+                <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
+[ ENTERPRISE HOST OS (Air-Gapped / Restricted) ]
+  │
+  └── [ SubtitleStudio_v5.exe ] (Compiled via Nuitka)
+       ├── Python 3.x Runtime  (Bundled, zero-install)
+       ├── Native Libs         (av.libs, FFmpeg)
+       ├── AI Models           (Local pyrnnoise binaries)
+       └── Execution Logic     (Validated offline)
+                </div>
             </div>
         </section>
 
@@ -267,7 +274,7 @@
                             <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.25rem;">The Execution Archive</h3>
                             <p class="text-dim" style="font-size: 0.95rem;">Before I built the pipelines, I built the frames. View my traditional motion design showreel and broadcast work.</p>
                         </div>
-                        <a href="#INSERT_YOUR_VIDEO_LINK_HERE" class="btn btn-outline mono" style="font-size: 0.85rem; padding: 0.75rem 1.5rem;">View Motion Portfolio →</a>
+                        <span class="text-accent mono" style="font-size: 0.85rem; padding: 0.75rem 0;">[ STATUS: Archive compiling for deployment... ]</span>
                     </div>
                 </div>
             </div>
