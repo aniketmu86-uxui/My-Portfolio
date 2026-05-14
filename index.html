@@ -131,7 +131,7 @@
             <p>I spent nearly two decades mastering the art of the frame. Now, I leverage that expertise to architect scalable creative systems, using Generative AI to accelerate execution.</p>
             
             <div class="btn-group mono" style="margin-top: 2rem;">
-                <a href="#architecture" class="btn">View Subtitle Studio v5</a>
+                <a href="#architecture" class="btn">View The Architecture</a>
                 <a href="#manifesto" class="btn btn-outline">Read Methodology</a>
             </div>
         </section>
@@ -158,30 +158,30 @@
         </section>
 
         <section id="architecture" class="reveal">
-            <span class="mono section-label">// Case Study</span>
-            <h2 style="margin-bottom: 0.5rem;">Subtitle Studio v1 to v5</h2>
-            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">Subtitle Studio evolved from a simple subtitle utility into a hardened production system designed to remove workflow friction, reduce operational risk, and scale creative output.</p>
+            <span class="mono section-label">// Case Study 01</span>
+            <h2 style="margin-bottom: 0.5rem;">Subtitle Studio (v1 to v5)</h2>
+            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">The evolution of a simple utility into a hardened production system designed to remove workflow friction, reduce operational risk, and scale creative output.</p>
 
             <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 2.5rem 0;">
-                <div style="color: var(--accent); margin-bottom: 1.5rem;">// SYSTEM_TOPOLOGY.config</div>
+                <div style="color: var(--accent); margin-bottom: 1.5rem;">// v5_SYSTEM_TOPOLOGY.config</div>
                 <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
 [RAW MEDIA] ──&gt; (Local Ingestion)
               │
               ▼
-         [PROCESSING ENGINE]
-         ├─&gt; AI Audio Cleanup (pyrnnoise)
-         ├─&gt; Automated Format Conversion (SRT/VTT)
-         └─&gt; Frame-Accurate Sync Validation
+         [v5 STANDALONE ENGINE]
+         ├─&gt; Native PyAV / FFmpeg Demuxing
+         ├─&gt; Premium Audio Path (denoise_chunk)
+         └─&gt; AI Vocal Isolation (pyrnnoise)
               │
               ▼
-[ENCODING] ──&gt; (Offline Compression) ──&gt; [FINAL RENDER]
+[ENCODING] ──&gt; (Zero-Dependency Export) ──&gt; [CLEAN MASTER]
                 </div>
             </div>
 
             <div class="timeline-item">
                 <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v1] The Democratization Milestone</h3>
                 <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Over-reliance on senior editors for the tedious task of burning branded subtitles into client videos.<br>
-                <strong>The Execution:</strong> Built a utility to democratize this process, enabling anyone on the team with a standard laptop to export client-ready, branded deliverables without specialized editing software.</p>
+                <strong>The Execution:</strong> Built a utility to democratize this process, enabling anyone on the team with a standard laptop to export client-ready deliverables without specialized software.</p>
             </div>
 
             <div class="timeline-item">
@@ -204,16 +204,9 @@
 
             <div class="timeline-item" style="border-left-color: var(--accent);">
                 <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[CURRENT STATE] Ship Candidate</div>
-                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">[v5] The Strategic Pivot</h3>
-                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Transcription is increasingly commoditized, but high-fidelity audio restoration remains a major manual bottleneck.</p>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Replaced the transcription engine with a Premium Audio Enhancement pipeline (pyrnnoise). Solved severe PyAV and Nuitka packaging conflicts to deliver v5 as a hardened, zero-dependency standalone EXE. It requires no environment setup—proving the system is ready for secure, enterprise-wide deployment on any clean machine.</p>
-            </div>
-
-            <div class="timeline-item" style="border-left-color: var(--border); margin-top: 4rem;">
-                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[PIPELINE ORCHESTRATION] After Effects</div>
-                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Data-Driven Motion Rendering</h3>
-                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Scaling localized video rollouts creates a massive bottleneck where motion designers waste hundreds of hours manually copy-pasting translated SRT text into After Effects compositions.</p>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Orchestrated a dynamic render pipeline using AI-generated JavaScript (ExtendScript). The architecture programmatically parses raw SRT data and automatically injects it into pre-rigged After Effects templates, generating fully localized, render-ready project files with zero manual data entry.</p>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">[v5] The Air-Gapped Engine</h3>
+                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Enterprise production environments require extreme data privacy, rendering cloud-dependent tools and complex environment setups unusable.</p>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Delivered a fully air-gapped, zero-dependency EXE that deploys AI audio enhancement (pyrnnoise) directly onto enterprise machines with zero IT overhead. By solving complex PyAV packaging conflicts, the system bypasses local environment setup entirely—proving it is ready for secure, immediate deployment on any clean machine.</p>
             </div>
             
             <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 3rem 0;">
@@ -227,6 +220,19 @@
        ├── AI Models           (Local pyrnnoise binaries)
        └── Execution Logic     (Validated offline)
                 </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <span class="mono section-label">// Case Study 02</span>
+            <h2 style="margin-bottom: 0.5rem;">Dynamic Render Pipelines</h2>
+            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">Taking system architecture directly into the timeline: automating Adobe After Effects to operate as a data-driven render engine.</p>
+            
+            <div class="timeline-item" style="border-left-color: var(--border);">
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[PIPELINE ORCHESTRATION] After Effects</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Data-Driven Motion Rendering</h3>
+                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Scaling localized video rollouts creates a massive bottleneck where motion designers waste hundreds of hours manually copy-pasting translated SRT text into After Effects compositions.</p>
+                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Orchestrated a dynamic render pipeline using AI-generated JavaScript (ExtendScript). The architecture programmatically parses raw SRT data and automatically injects it into pre-rigged After Effects templates, generating fully localized, render-ready project files with zero manual data entry.</p>
             </div>
         </section>
 
@@ -266,16 +272,6 @@
                             </div>
                         </li>
                     </ul>
-                </div>
-
-                <div style="grid-column: 1 / -1; margin-top: 1rem;">
-                     <div class="card" style="border-color: var(--border); background: var(--bg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <div>
-                            <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.25rem;">The Execution Archive</h3>
-                            <p class="text-dim" style="font-size: 0.95rem;">Before I built the pipelines, I built the frames. View my traditional motion design showreel and broadcast work.</p>
-                        </div>
-                        <span class="text-accent mono" style="font-size: 0.85rem; padding: 0.75rem 0;">[ STATUS: Archive compiling for deployment... ]</span>
-                    </div>
                 </div>
             </div>
         </section>
