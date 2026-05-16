@@ -86,7 +86,7 @@
         h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 600; margin-bottom: 2rem; letter-spacing: -0.02em; }
         .section-label { color: var(--accent); margin-bottom: 1rem; display: block; }
 
-        .card { padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
+        .card { padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; height: 100%; }
         .card h3 { font-size: 1.25rem; margin-bottom: 1rem; font-weight: 500; }
         
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -115,6 +115,7 @@
             <div class="mono text-main brand-name">Aniket Mukherjee</div>
             <div class="nav-links mono">
                 <a href="#manifesto">Methodology</a>
+                <a href="#stack">Stack</a>
                 <a href="#architecture">The Systems</a>
                 <a href="#foundation">Experience</a>
                 <a href="#contact">Contact</a>
@@ -126,9 +127,9 @@
     <main class="container">
         <section class="hero">
             <span class="mono section-label">System Architect // Creative Technologist</span>
-            <h1>17 Years of Motion Design.<br><span class="text-accent">One Vision for System Architecture.</span></h1>
+            <h1>17 Years of Production.<br><span class="text-accent">100x Engineering Velocity.</span></h1>
             
-            <p>I spent nearly two decades mastering the art of the frame. Now, I leverage that expertise to architect scalable creative systems, using Generative AI to accelerate execution.</p>
+            <p>I spent nearly two decades mastering the art of the frame in high-pressure broadcast environments. Now, I architect the AI-powered automation pipelines and standalone infrastructure that eliminate operational bottlenecks and scale creative output.</p>
             
             <div class="btn-group mono" style="margin-top: 2rem;">
                 <a href="#architecture" class="btn">View The Architecture</a>
@@ -142,97 +143,111 @@
             <div class="grid-2">
                 <div>
                     <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;">The Architect's Empathy</h3>
-                    <p class="text-dim" style="font-size: 0.95rem;">After 17 years in high-pressure production environments, I know that seeing senior editors spend hours on repetitive subtitle burns and export management instead of creative review is a systemic failure. I build offline, zero-dependency tools designed to eliminate that exact operational bleed.</p>
+                    <p class="text-dim" style="font-size: 0.95rem;">After 17 years in the timeline, I know that seeing senior editors spend hours on repetitive subtitle burns and export management is a systemic failure. I build offline, zero-dependency tools designed to eliminate that exact operational bleed.</p>
                 </div>
                 <div>
                     <h3 class="mono text-main" style="font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;">Translation to Software</h3>
-                    <p class="text-dim" style="font-size: 0.95rem;">Designing a motion sequence and designing a software architecture are the same discipline: both require deep mastery of timing, layering, dependency chains, and precise orchestration. I translate visual thinking into robust data flows.</p>
+                    <p class="text-dim" style="font-size: 0.95rem;">Designing a motion sequence and designing software architecture are the same discipline: both require deep mastery of timing, layering, dependency chains, and precise orchestration. I translate visual thinking into deterministic code.</p>
                 </div>
                 <div style="grid-column: 1 / -1;">
                     <div class="card" style="border-color: var(--accent); background: var(--accent-dim);">
-                        <h3 class="mono text-main" style="font-size: 1rem; margin-bottom: 1rem;">AI as the Technical Crew</h3>
-                        <p class="text-dim" style="font-size: 0.95rem;">I operate as the Lead Architect and Final Approver. While Generative AI accelerates the writing of code, my role is to define the deployment logic, stress-test the edge cases, and ensure every output meets the frame-accurate standards of a 17-year veteran.</p>
+                        <h3 class="mono text-main" style="font-size: 1rem; margin-bottom: 1rem;">Prompt-Driven Architecture</h3>
+                        <p class="text-dim" style="font-size: 0.95rem;">I operate as the Lead Architect and Final Approver. While LLMs (Claude/Gemini) accelerate the writing of syntax, my role is to decompose complex workflows into precise logic modules, stress-test edge cases, and ensure every output strictly preserves human-in-the-loop validation.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="reveal">
+            <span class="mono section-label">// Technical Arsenal</span>
+            <h2>Core Stack</h2>
+            <div class="grid-2">
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="mono text-accent" style="margin-bottom: 0.5rem;">[BACKEND & PROCESSING]</div>
+                    <p class="text-dim">Python 3.12<br>JavaScript (ExtendScript / RegEx)<br>FFmpeg / Native PyAV<br>OpenCV</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="mono text-accent" style="margin-bottom: 0.5rem;">[UI & DEPLOYMENT]</div>
+                    <p class="text-dim">CustomTkinter<br>Nuitka Compiler<br>PyInstaller<br>Standalone Enterprise Compilation</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="mono text-accent" style="margin-bottom: 0.5rem;">[ARCHITECTURE & LOGIC]</div>
+                    <p class="text-dim">LLM-Assisted Engineering<br>Workflow Mapping<br>Logic Decomposition<br>Human-in-the-loop Validation</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="mono text-accent" style="margin-bottom: 0.5rem;">[CREATIVE EXECUTION]</div>
+                    <p class="text-dim">Advanced Motion Design<br>Broadcast Graphics<br>Adobe After Effects<br>Premiere Pro</p>
                 </div>
             </div>
         </section>
 
         <section id="architecture" class="reveal">
             <span class="mono section-label">// Case Study 01</span>
-            <h2 style="margin-bottom: 0.5rem;">Subtitle Studio (v1 to v5)</h2>
-            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">The evolution of a simple utility into a hardened production system designed to remove workflow friction, reduce operational risk, and scale creative output.</p>
+            <h2 style="margin-bottom: 0.5rem;">Subtitle Studio v5</h2>
+            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">The Air-Gapped Production Engine. A zero-dependency standalone suite replacing fragmented video processing and "Shadow IT" converters with a unified, offline-first pipeline.</p>
 
             <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 2.5rem 0;">
-                <div style="color: var(--accent); margin-bottom: 1.5rem;">// v5_SYSTEM_TOPOLOGY.config</div>
-                <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
-[RAW MEDIA] ──&gt; (Local Ingestion)
-              │
-              ▼
-         [v5 STANDALONE ENGINE]
-         ├─&gt; Native PyAV / FFmpeg Demuxing
-         ├─&gt; Premium Audio Path (denoise_chunk)
-         └─&gt; AI Vocal Isolation (pyrnnoise)
-              │
-              ▼
-[ENCODING] ──&gt; (Zero-Dependency Export) ──&gt; [CLEAN MASTER]
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v1] The Democratization Milestone</h3>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Over-reliance on senior editors for the tedious task of burning branded subtitles into client videos.<br>
-                <strong>The Execution:</strong> Built a utility to democratize this process, enabling anyone on the team with a standard laptop to export client-ready deliverables without specialized software.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v2] The Verification Layer</h3>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Automated burns lacked the nuance required for high-stakes client communication.<br>
-                <strong>The Execution:</strong> Integrated a "Human-in-the-Loop" editing interface. This ensured that while generation was automated, final timing and text remained under strict professional QA control.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v3] Securing the Pipeline</h3>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Teams were relying on unvetted online converters (Shadow IT) for media compression and formatting.<br>
-                <strong>The Execution:</strong> Designed a fully offline export chain (SRT, VTT, MP4 compression) to eliminate the security risk of processing company IP through third-party web tools.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">[v4] Local AI Exploration</h3>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Constraint:</strong> Investigating if local Generative AI could accelerate the data-entry phase of production.<br>
-                <strong>The Execution:</strong> Hardened the local architecture to support Whisper, stress-testing how local inference performs within standard enterprise hardware limits.</p>
-            </div>
-
-            <div class="timeline-item" style="border-left-color: var(--accent);">
-                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[CURRENT STATE] Ship Candidate</div>
-                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">[v5] The Air-Gapped Engine</h3>
-                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Enterprise production environments require extreme data privacy, rendering cloud-dependent tools and complex environment setups unusable.</p>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Delivered a fully air-gapped, zero-dependency EXE that deploys AI audio enhancement (pyrnnoise) directly onto enterprise machines with zero IT overhead. By solving complex PyAV packaging conflicts, the system bypasses local environment setup entirely—proving it is ready for secure, immediate deployment on any clean machine.</p>
-            </div>
-            
-            <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 3rem 0;">
                 <div style="color: var(--accent); margin-bottom: 1.5rem;">// STANDALONE_ARCHITECTURE.sys</div>
                 <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
 [ ENTERPRISE HOST OS (Air-Gapped / Restricted) ]
   │
   └── [ SubtitleStudio_v5.exe ] (Compiled via Nuitka)
-       ├── Python 3.x Runtime  (Bundled, zero-install)
-       ├── Native Libs         (av.libs, FFmpeg)
-       ├── AI Models           (Local pyrnnoise binaries)
-       └── Execution Logic     (Validated offline)
+       ├── Python 3.12 Runtime  (Bundled, zero-install)
+       ├── Native Media Core    (av.libs, FFmpeg demuxing)
+       ├── AI Models            (Local pyrnnoise binaries)
+       └── Custom Audio Path    (denoise_chunk logic)
                 </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Rapid Development Lifecycle</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Accelerated product development by independently architecting, testing, and compiling the entire v5 suite within a <strong>30-day window</strong> using an optimized, LLM-assisted engineering pipeline.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="mono text-main" style="font-size: 1.1rem; margin-bottom: 0.5rem;">The Architecture & Packaging</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Orchestrated a Python-based pipeline integrating native PyAV, FFmpeg demuxing, and a custom premium audio path. Solved highly complex Nuitka packaging conflicts to ensure 100% portability across restricted network environments.</p>
+            </div>
+
+            <div class="timeline-item" style="border-left-color: var(--accent);">
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[THE STRATEGIC PIVOT]</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Local AI Vocal Isolation</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Replaced commoditized transcription engines with local AI vocal isolation (pyrnnoise) to solve the primary remaining manual audio bottleneck in enterprise environments. Democratized branded subtitle generation across the organization with zero IT overhead.</p>
             </div>
         </section>
 
         <section class="reveal">
             <span class="mono section-label">// Case Study 02</span>
-            <h2 style="margin-bottom: 0.5rem;">Dynamic Render Pipelines</h2>
-            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">Taking system architecture directly into the timeline: automating Adobe After Effects to operate as a data-driven render engine.</p>
+            <h2 style="margin-bottom: 0.5rem;">Proprietary Studio Automation Suite</h2>
+            <p class="text-dim" style="margin-bottom: 3rem; max-width: 700px;">An ecosystem of custom ExtendScript (.jsx) architectures that bypass the standard UI to automate complex physics, data parsing, and project lifecycle management directly within the After Effects DOM.</p>
             
+            <div class="card mono" style="background: #050505; border: 1px solid var(--border); overflow-x: auto; padding: 2rem; margin: 2.5rem 0;">
+                <div style="color: var(--accent); margin-bottom: 1.5rem;">// AFTER_EFFECTS_ORCHESTRATION.config</div>
+                <div style="color: var(--text-dim); line-height: 1.8; white-space: pre;">
+[ ADOBE AFTER EFFECTS DOM ]
+  │
+  ├── Procedural_Karaoke.jsx (Dual-SRT data ingestion)
+  ├── Vector_Rigger.jsx      (SVG coordinate parsing)
+  └── Asset_Tracker.jsx      (Global project traversal)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[DATA-DRIVEN TIMING]</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Procedural Karaoke Engine</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Deployed a data-driven pipeline that ingests and cross-references dual-SRT data streams. Automatically generates complex, word-level synchronized typography animations completely independent of asset duration, reducing manual timeline animation time by 95%.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[PHYSICS AUTOMATION]</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Automated Vector Rigging Pipeline</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Engineered an LLM-assisted workflow that parses raw SVG coordinate data to automatically generate complex ExtendScript rigging logic. Instantly applies strict mechanical hierarchies and rotational expressions to 2D assets (e.g., beam balances) directly within the application.</p>
+            </div>
+
             <div class="timeline-item" style="border-left-color: var(--border);">
-                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[PIPELINE ORCHESTRATION] After Effects</div>
-                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Data-Driven Motion Rendering</h3>
-                <p class="text-dim" style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>The Constraint:</strong> Scaling localized video rollouts creates a massive bottleneck where motion designers waste hundreds of hours manually copy-pasting translated SRT text into After Effects compositions.</p>
-                <p class="text-dim" style="font-size: 0.95rem;"><strong>The Execution:</strong> Orchestrated a dynamic render pipeline using AI-generated JavaScript (ExtendScript). The architecture programmatically parses raw SRT data and automatically injects it into pre-rigged After Effects templates, generating fully localized, render-ready project files with zero manual data entry.</p>
+                <div class="mono text-accent" style="margin-bottom: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em;">[ENTERPRISE METADATA]</div>
+                <h3 class="mono text-main" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Asset Dependency & Lifecycle Tracker</h3>
+                <p class="text-dim" style="font-size: 0.95rem;">Developed a custom dockable UI panel that dynamically traverses complex project hierarchies. Automatically cross-references and tags footage usage across all nested compositions, eliminating project bloat, optimizing server storage, and standardizing file handoffs between motion designers.</p>
             </div>
         </section>
 
@@ -246,12 +261,16 @@
                         <li style="margin-bottom: 1.5rem;">
                             <strong style="color: var(--text-main); display: block;">Senior Associate & Studio Lead</strong>
                             <span class="text-accent mono" style="font-size: 0.8rem;">PwC SDC Kolkata | 2024 — Present</span>
-                            <p class="text-dim" style="font-size: 0.9rem; margin-top: 0.5rem;">Directing high-stakes creative production while architecting the automated systems that scale the studio's operational capacity.</p>
+                            <p class="text-dim" style="font-size: 0.9rem; margin-top: 0.5rem;">Directing high-stakes creative production. Architected and deployed proprietary standalone automation tools (including Subtitle Studio v5) that eliminate manual operational bottlenecks and bypass external vendor dependencies.</p>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong style="color: var(--text-main); display: block;">Creative Lead UK Video & Animation</strong>
+                            <span class="text-dim mono" style="font-size: 0.8rem;">PwC | 2021 — 2023</span>
                         </li>
                         <li>
                             <strong style="color: var(--text-main); display: block;">17 Years in Motion & Media</strong>
-                            <span class="text-accent mono" style="font-size: 0.8rem;">2009 — Present</span>
-                            <p class="text-dim" style="font-size: 0.9rem; margin-top: 0.5rem;">Extensive background in frame-accurate video editing, motion graphics design, and enterprise broadcast standards.</p>
+                            <span class="text-accent mono" style="font-size: 0.8rem;">2008 — Present</span>
+                            <p class="text-dim" style="font-size: 0.9rem; margin-top: 0.5rem;">Extensive background in frame-accurate video editing, motion graphics design, and enterprise broadcast standards (CNN-News18, Focus Bangla).</p>
                         </li>
                     </ul>
                 </div>
